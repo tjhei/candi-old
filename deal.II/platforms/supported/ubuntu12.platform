@@ -8,6 +8,9 @@
 # Then reboot and run candi again.
 ##
 
+
+# use trilinos 11 because gcc is too old for trilinos 12.2
+
 #
 # Define the packages this platform needs
 PACKAGES=(
@@ -16,7 +19,7 @@ once:parmetis
 once:superlu_dist
 once:hdf5
 once:p4est
-once:trilinos
+once:trilinos11
 once:petsc
 once:slepc
 dealii

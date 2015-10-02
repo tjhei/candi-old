@@ -1,0 +1,37 @@
+VERSION=11.10.2
+NAME=trilinos-${VERSION}-Source
+SOURCE=http://trilinos.sandia.gov/download/files/
+PACKING=.tar.bz2
+DOWNLOADER=curl
+CHECKSUM=c8dd5012890140b1a98c704c111cddaa
+BUILDCHAIN=cmake
+
+CONFOPTS="${TRILINOS_CONFOPTS} \
+          -D Trilinos_ENABLE_OpenMP:BOOL=OFF \
+          -D TPL_ENABLE_TBB:BOOL=OFF \
+          -D Trilinos_ENABLE_Didasko:BOOL=ON \
+          -D Trilinos_ENABLE_Sacado:BOOL=ON \
+          -D Trilinos_ENABLE_Stratimikos:BOOL=ON \
+          -D Trilinos_ENABLE_Belos:BOOL=ON \
+          -D Trilinos_ENABLE_MueLu:BOOL=ON \
+          -D Trilinos_ENABLE_Amesos2:BOOL=ON \
+          -D TPL_ENABLE_ParMETIS:BOOL=${ParMETIS} \
+          -D TPL_ParMETIS_LIBRARIES:FILEPATH=${INSTALL_PATH}/lib/libparmetis.so \
+          -D TPL_ENABLE_SuperLUDist:BOOL=${SuperLUDist} \
+          -D TPL_SuperLUDist_LIBRARIES:FILEPATH=${INSTALL_PATH}/lib/libsuperlu_dist.so \
+          -D SuperLUDist_INCLUDE_DIRS:PATH=${INSTALL_PATH}/include/superlu \
+          -D HAVE_SUPERLUDIST_LUSTRUCTINIT_2ARG:BOOL=ON \
+          -D CMAKE_BUILD_TYPE:STRING=RELEASE \
+          -D CMAKE_CXX_FLAGS:STRING=-fPIC -g -O3 \
+          -D CMAKE_C_FLAGS:STRING=-fPIC -g -O3 \
+          -D CMAKE_FORTRAN_FLAGS:STRING=-g -O5 \
+          -D Trilinos_EXTRA_LINK_FLAGS:STRING=-lgfortran \
+          -D CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE \
+          -D Trilinos_VERBOSE_CONFIGURE:BOOL=FALSE \
+          -D TPL_ENABLE_MPI:BOOL=ON \
+          -D BUILD_SHARED_LIBS:BOOL=ON"
+
+package_specific_register () {
+    export TRILINOS_DIR=${INSTALL_PATH}
+}
+
