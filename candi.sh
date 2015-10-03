@@ -132,6 +132,7 @@ package_fetch () {
             git clone ${SOURCE}${NAME} ${EXTRACTSTO}
         else
             cd ${EXTRACTSTO}
+	    git checkout master
             git pull
             cd ..
         fi
