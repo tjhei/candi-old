@@ -19,7 +19,7 @@ and
 
 To use deal.II you can use:
 ```
-docker run -it tjhei/dealii:v9.0.1-r4
+docker run -it tjhei/dealii:v9.0.1-full-v9.0.1-r4
 ```
 and all dependencies including ``DEAL_II_DIR`` are set up correctly.
 
