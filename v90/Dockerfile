@@ -38,3 +38,9 @@ ENV SLEPC_DIR=/home/dealii/libs/slepc-3.7.3
 ENV SUNDIALS_DIR=/home/dealii/libs/sundials-3.1.0
 ENV SUPERLU_DIR=/home/dealii/libs/superlu_dist_5.1.2
 ENV TRILINOS_DIR=/home/dealii/libs/trilinos-release-12-10-1
+
+# make sure all the paths we set above actually exist:
+COPY check.sh $HOME/
+USER root
+RUN chown -R $USER:$USER $HOME/check.sh
+RUN ./check.sh && rm check.sh
