@@ -1,6 +1,6 @@
 FROM %%FROM%%
 
-MAINTAINER luca.heltai@gmail.com
+MAINTAINER timo.heister@gmail.com
 
 # get deal.II repo
 ARG VER=master
