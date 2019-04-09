@@ -1,4 +1,4 @@
-FROM tjhei/candi-base
+FROM %%FROM%%
 
 MAINTAINER timo.heister@gmail.com
 
