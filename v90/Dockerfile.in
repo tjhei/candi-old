@@ -43,4 +43,5 @@ ENV TRILINOS_DIR=/home/dealii/libs/trilinos-release-12-10-1
 COPY check.sh $HOME/
 USER root
 RUN chown -R $USER:$USER $HOME/check.sh
+USER $USER
 RUN ./check.sh && rm check.sh
