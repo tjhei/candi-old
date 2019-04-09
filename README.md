@@ -6,7 +6,7 @@ This repo lists the current docker images available to use candi inside docker.
 The images currently are:
 
 | img | candi | deal.II version | note |
-| --- | --- | --- |
+| --- | --- | --- | --- |
 | tjhei/candi-base:gcc5 | - | - | ubuntu base with MPICH 3.2 and gcc 5.4 |
 | tjhei/candi-base:clang6 | - | - | ubuntu base with MPICH 3.2 and clang 6 |
 | tjhei/candi:v8.5.1-r1-gcc5 | [8.5](https://github.com/dealii/candi/tree/dealii-8.5) | - |
