@@ -24,8 +24,6 @@ RUN apt-get update && apt-get -yq install \
     unzip \
     wget \
     zlib1g-dev \
-    libmpich-dev \
-    mpich \
     python
 
 # install astyle:
@@ -38,7 +36,10 @@ RUN \
     cd - && \
     rm -rf astyle*
 
-# Select the default compiler
+# install openmpi
+RUN apt-get install -yq libopenmpi-dev openmpi-bin
+
+# Select the default compiler:
 ENV CC mpicc
 ENV CXX mpicxx
 ENV FC mpif90
