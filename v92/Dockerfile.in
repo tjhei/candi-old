@@ -1,8 +1,12 @@
-FROM tjhei/candi-base
+FROM %%FROM%%
 
 MAINTAINER timo.heister@gmail.com
 
 USER root
+
+# Hack for opencascade, which tries to include xlocale.h. This should be fixed
+# in candi instead.
+RUN ln -sf /usr/include/locale.h /usr/include/xlocale.h
 
 ADD candi/ $HOME/candi/
 RUN chown -R $USER:$USER $HOME/candi/
@@ -13,7 +17,7 @@ RUN \
   ./candi.sh -j8 \
 	--platform=deal.II-toolchain/platforms/supported/ubuntu16.platform \
 	--prefix=$HOME/libs \
-	--packages="load:dealii-prepare once:arpack-ng once:opencascade once:parmetis once:superlu_dist once:hdf5 once:p4est once:trilinos once:petsc once:slepc once:assimp once:nanoflann once:sundials once:adolc once:gmsh" &&\
+	--packages="load:dealii-prepare once:arpack-ng once:opencascade once:parmetis once:superlu_dist once:hdf5 once:p4est once:trilinos once:petsc once:slepc once:assimp once:sundials once:adolc once:gmsh" &&\
   rm -rf $HOME/candi $HOME/libs/tmp
 
 # I don't know how to import env vars from the configuration folder.  This
@@ -28,7 +32,6 @@ ENV ASSIMP_DIR=/home/dealii/libs/assimp-4.1.0
 ENV GMSH_DIR=/home/dealii/libs/gmsh-3.0.6
 ENV HDF5_DIR=/home/dealii/libs/hdf5-1.10.1
 ENV METIS_DIR=/home/dealii/libs/parmetis-4.0.3
-ENV NANOFLANN_DIR=/home/dealii/libs/nanoflann-v1.2.3
 ENV OPENCASCADE_DIR=/home/dealii/libs/oce-OCE-0.18.2
 ENV P4EST_DIR=/home/dealii/libs/p4est-2.0
 ENV PARMETIS_DIR=/home/dealii/libs/parmetis-4.0.3
@@ -43,4 +46,5 @@ ENV TRILINOS_DIR=/home/dealii/libs/trilinos-release-12-10-1
 COPY check.sh $HOME/
 USER root
 RUN chown -R $USER:$USER $HOME/check.sh
+USER $USER
 RUN ./check.sh && rm check.sh

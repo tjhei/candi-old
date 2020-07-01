@@ -1,10 +1,10 @@
-FROM dealii/ubuntu16
+FROM tjhei/candi-base:base
 
 MAINTAINER timo.heister@gmail.com
 
 USER root
 
-RUN apt-get update && apt-get -yq install \
+RUN apt-get update && apt-get -yq --no-install-recommends install \
     bzip2 \
     cmake \
     g++ \
