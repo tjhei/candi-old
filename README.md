@@ -11,11 +11,13 @@ The images currently are:
 | tjhei/candi-base:clang6 | - | - | ubuntu base with MPICH 3.2 and clang 6 |
 | tjhei/candi:v8.5.1-r1-gcc5 | [8.5](https://github.com/dealii/candi/tree/dealii-8.5) | - |
 | tjhei/candi:v9.0.1-r5-gcc5 | [9.0](https://github.com/dealii/candi/tree/dealii-9.0) | - |
+| tjhei/candi:v9.2.0-r1-gcc5 | [9.2](https://github.com/dealii/candi/tree/dealii-9.2) | - |
 | tjhei/dealii:v8.5.1-full-v8.5.1-r1-gcc5 | [8.5](https://github.com/dealii/candi/tree/dealii-8.5) | [v8.5.1](https://github.com/dealii/dealii/releases/tag/v8.5.1) | |
 | tjhei/dealii:v9.0.1-full-v9.0.1-r5-gcc5 | [9.0](https://github.com/dealii/candi/tree/dealii-9.0) | [v9.0.1](https://github.com/dealii/dealii/releases/tag/v9.0.1) | |
 | tjhei/dealii:v9.0.1-full-v9.0.1-r5-clang6 | [9.0](https://github.com/dealii/candi/tree/dealii-9.0) | [v9.0.1](https://github.com/dealii/dealii/releases/tag/v9.0.1) | |
 | tjhei/dealii:v9.1.1-full-v9.1.1-r1-gcc5 | [9.1](https://github.com/dealii/candi/tree/dealii-9.1) | [v9.1.1](https://github.com/dealii/dealii/releases/tag/v9.1.1) | |
 | tjhei/dealii:v9.1.1-full-v9.1.1-r1-clang6 | [9.1](https://github.com/dealii/candi/tree/dealii-9.1) | [v9.1.1](https://github.com/dealii/dealii/releases/tag/v9.1.1) | |
+| tjhei/dealii:v9.2.0-full-v9.2.0-r1-gcc5 | [9.2](https://github.com/dealii/candi/tree/dealii-9.2) | [v9.2.0](https://github.com/dealii/dealii/releases/tag/v9.2.0) | |
 
 For older images, please check
 [docker hub tjhei/candi](https://hub.docker.com/r/tjhei/candi/tags/)

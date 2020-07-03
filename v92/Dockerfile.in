@@ -26,21 +26,21 @@ RUN \
 # here instead:
 RUN cat ~/libs/configuration/* | grep export | sort
 
-ENV ADOLC_DIR=/home/dealii/libs/adolc-2.6.4-rc1
+ENV ADOLC_DIR=/home/dealii/libs/adolc-master
 ENV ARPACK_DIR=/home/dealii/libs/arpack-ng-3.6.2
 ENV ASSIMP_DIR=/home/dealii/libs/assimp-4.1.0
 ENV GMSH_DIR=/home/dealii/libs/gmsh-3.0.6
-ENV HDF5_DIR=/home/dealii/libs/hdf5-1.10.1
+ENV HDF5_DIR=/home/dealii/libs/hdf5-1.10.5
 ENV METIS_DIR=/home/dealii/libs/parmetis-4.0.3
 ENV OPENCASCADE_DIR=/home/dealii/libs/oce-OCE-0.18.2
-ENV P4EST_DIR=/home/dealii/libs/p4est-2.0
+ENV P4EST_DIR=/home/dealii/libs/p4est-2.2
 ENV PARMETIS_DIR=/home/dealii/libs/parmetis-4.0.3
-ENV PETSC_DIR=/home/dealii/libs/petsc-3.7.6
-ENV SCALAPACK_DIR=/home/dealii/libs/petsc-3.7.6
-ENV SLEPC_DIR=/home/dealii/libs/slepc-3.7.3
+ENV PETSC_DIR=/home/dealii/libs/petsc-3.13.1
+ENV SCALAPACK_DIR=/home/dealii/libs/petsc-3.13.1
+ENV SLEPC_DIR=/home/dealii/libs/slepc-3.13.2
 ENV SUNDIALS_DIR=/home/dealii/libs/sundials-3.1.0
 ENV SUPERLU_DIR=/home/dealii/libs/superlu_dist_5.1.2
-ENV TRILINOS_DIR=/home/dealii/libs/trilinos-release-12-10-1
+ENV TRILINOS_DIR=/home/dealii/libs/trilinos-release-12-18-1
 
 # make sure all the paths we set above actually exist:
 COPY check.sh $HOME/

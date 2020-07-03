@@ -39,9 +39,6 @@ cd dealii; ./make.sh v9.2.0 v9.2.0-r1 gcc5; cd ..
 #master=e2c9db2
 #cd dealii; ./make.sh $master v9.0.1-r5; cd ..
 
-pause
-
-
 docker push tjhei/candi-base:gcc5
 docker push tjhei/candi-base:clang6
 docker push tjhei/candi:v8.5.1-r1-gcc5
@@ -53,3 +50,5 @@ docker push tjhei/dealii:v9.0.1-full-v9.0.1-r5-clang6
 
 docker push tjhei/dealii:v9.1.1-full-v9.1.1-r1-gcc5
 docker push tjhei/dealii:v9.1.1-full-v9.1.1-r1-clang6
+
+docker push tjhei/dealii:v9.2.0-full-v9.2.0-r1-gcc5
