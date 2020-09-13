@@ -31,9 +31,9 @@ docker build -t tjhei/candi-base:gcc5-openmpi base-gcc5-openmpi/
 # TODO cd dealii; ./make.sh v9.1.1 v9.1.1-r1 clang6; cd ..
 
 ## 9.2:
-cd v92; ./make.sh v9.2.0-r1 gcc5; cd ..
+cd v92; ./make.sh v9.2.0-r2 gcc5; cd ..
 #cd v92; ./make.sh v9.2.0-r1 clang6; cd ..
-cd dealii; ./make.sh v9.2.0 v9.2.0-r1 gcc5; cd ..
+cd dealii; ./make.sh v9.2.0 v9.2.0-r2 gcc5; cd ..
 
 
 #master=e2c9db2
@@ -44,6 +44,7 @@ docker push tjhei/candi-base:clang6
 docker push tjhei/candi:v8.5.1-r1-gcc5
 docker push tjhei/candi:v9.0.1-r5-gcc5
 docker push tjhei/candi:v9.1.1-r1-gcc5
+docker push tjhei/candi:v9.2.0-r2-gcc5
 docker push tjhei/dealii:v8.5.1-full-v8.5.1-r1-gcc5
 docker push tjhei/dealii:v9.0.1-full-v9.0.1-r5-gcc5
 docker push tjhei/dealii:v9.0.1-full-v9.0.1-r5-clang6
@@ -51,4 +52,4 @@ docker push tjhei/dealii:v9.0.1-full-v9.0.1-r5-clang6
 docker push tjhei/dealii:v9.1.1-full-v9.1.1-r1-gcc5
 docker push tjhei/dealii:v9.1.1-full-v9.1.1-r1-clang6
 
-docker push tjhei/dealii:v9.2.0-full-v9.2.0-r1-gcc5
+docker push tjhei/dealii:v9.2.0-full-v9.2.0-r2-gcc5

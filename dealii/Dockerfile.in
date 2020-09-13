@@ -10,15 +10,15 @@ RUN git clone https://github.com/dealii/dealii.git dealii-$VER-src && \
     cd dealii-$VER-src && \
     git checkout $VER && \
     mkdir build && cd build && \
-    cmake -DDEAL_II_WITH_MPI=ON \
-          -DDEAL_II_COMPONENT_EXAMPLES=OFF \
-          -DCMAKE_INSTALL_PREFIX=~/dealii-$VER \
-          -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
-	  -GNinja \
+    cmake -D DEAL_II_WITH_MPI=ON \
+          -D DEAL_II_COMPONENT_EXAMPLES=OFF \
+          -D DEAL_II_CXX_FLAGS_DEBUG='-O3' \
+          -D CMAKE_INSTALL_PREFIX=~/dealii-$VER \
+          -D CMAKE_BUILD_TYPE=$BUILD_TYPE \
+	  -G Ninja \
           ../ && \
     ninja install && \
     ninja test && \
-    cp summary.log ~/dealii-$VER/summary.log &&\
-    cd .. && rm -rf build .git 
+    cd .. && rm -rf build .git
 
 ENV DEAL_II_DIR $HOME/dealii-$VER
